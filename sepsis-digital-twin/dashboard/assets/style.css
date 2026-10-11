@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.dashboard {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    background: #1f2937;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.input-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.patient-input {
+    margin-left: 15px;
+    padding: 12px;
+    width: 250px;
+    font-size: 16px;
+}
+
+.run-button {
+    margin-left: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+}
+
+.status {
+    margin-top: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 14px;
+    color: #666;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

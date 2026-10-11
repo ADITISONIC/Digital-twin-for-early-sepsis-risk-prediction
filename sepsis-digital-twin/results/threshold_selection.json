@@ -1,0 +1,8 @@
+{
+    "best_threshold": 0.5,
+    "validation_utility": 0.4589497929699404,
+    "best_parameters": {
+        "max_depth": 4,
+        "learning_rate": 0.05
+    }
+}

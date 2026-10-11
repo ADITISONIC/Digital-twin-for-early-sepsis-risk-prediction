@@ -1,0 +1,75 @@
+project_name: "Leakage-Aware Sepsis Early Warning"
+random_seed: 42
+
+paths:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  models_dir: "models"
+  results_dir: "results"
+
+data:
+  archive_name: "Sepsis_Challenge_2019_Dataset.tar.gz"  # Location relative to workspace root
+  delimiter: "|"
+  target_col: "SepsisLabel"
+  patient_id_col: "PatientID"
+  hospital_id_col: "HospitalID"
+
+variables:
+  vitals:
+    - "HR"
+    - "O2Sat"
+    - "Temp"
+    - "SBP"
+    - "MAP"
+    - "DBP"
+    - "Resp"
+    - "EtCO2"
+  labs:
+    - "BaseExcess"
+    - "HCO3"
+    - "FiO2"
+    - "pH"
+    - "PaCO2"
+    - "SaO2"
+    - "AST"
+    - "BUN"
+    - "Alkalinephos"
+    - "Calcium"
+    - "Chloride"
+    - "Creatinine"
+    - "Bilirubin_direct"
+    - "Glucose"
+    - "Lactate"
+    - "Magnesium"
+    - "Phosphate"
+    - "Potassium"
+    - "Bilirubin_total"
+    - "TroponinI"
+    - "Hct"
+    - "Hgb"
+    - "PTT"
+    - "WBC"
+    - "Fibrinogen"
+    - "Platelets"
+  demographics:
+    - "Age"
+    - "Gender"
+    - "Unit1"
+    - "Unit2"
+    - "HospAdmTime"
+    - "ICULOS"
+
+preprocessing:
+  max_forward_fill_gap: 24  # Max hours to carry forward measurements
+  imputation_strategy: "median"  # Fallback strategy
+
+xgb_params:
+  n_estimators: 100
+  max_depth: 5
+  learning_rate: 0.1
+  subsample: 0.8
+  colsample_bytree: 0.8
+  scale_pos_weight: 1.0  
+  # Will be adjusted dynamically based on class imbalance
