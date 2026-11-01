@@ -1,1 +1,31 @@
+# Dataset
 Sepsis_Challenge_2019_Dataset.tar.gz
+
+# Python virtual environment
+sepsis-digital-twin/bin/
+sepsis-digital-twin/include/
+sepsis-digital-twin/lib/
+sepsis-digital-twin/etc/
+sepsis-digital-twin/share/
+sepsis-digital-twin/pyvenv.cfg
+
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Mac
+.DS_Store
+
+# Node
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
